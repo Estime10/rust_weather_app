@@ -1,0 +1,1 @@
+/home/davinchat/1.Dev/Weather_app\ Décathlon/weather_api/target/debug/weather_api: /home/davinchat/1.Dev/Weather_app\ Décathlon/weather_api/src/cities.rs /home/davinchat/1.Dev/Weather_app\ Décathlon/weather_api/src/forcast.rs /home/davinchat/1.Dev/Weather_app\ Décathlon/weather_api/src/main.rs /home/davinchat/1.Dev/Weather_app\ Décathlon/weather_api/src/selected.rs

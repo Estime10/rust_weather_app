@@ -1,0 +1,13 @@
+/home/davinchat/1.Dev/Weather_app Décathlon/weather_api/target/debug/deps/eyre-6aaa08cddd4a63ec.rmeta: /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/lib.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/backtrace.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/chain.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/context.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/error.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/fmt.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/kind.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/macros.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/wrapper.rs
+
+/home/davinchat/1.Dev/Weather_app Décathlon/weather_api/target/debug/deps/eyre-6aaa08cddd4a63ec.d: /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/lib.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/backtrace.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/chain.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/context.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/error.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/fmt.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/kind.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/macros.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/wrapper.rs
+
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/lib.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/backtrace.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/chain.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/context.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/error.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/fmt.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/kind.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/macros.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/eyre-0.6.8/src/wrapper.rs:

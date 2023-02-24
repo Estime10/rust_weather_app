@@ -1,0 +1,12 @@
+/home/davinchat/1.Dev/Weather_app Décathlon/weather_api/target/debug/deps/semver-6ebcde4b5d3b95ee.rmeta: /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/lib.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/backport.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/display.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/error.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/eval.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/identifier.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/impls.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/parse.rs
+
+/home/davinchat/1.Dev/Weather_app Décathlon/weather_api/target/debug/deps/semver-6ebcde4b5d3b95ee.d: /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/lib.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/backport.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/display.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/error.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/eval.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/identifier.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/impls.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/parse.rs
+
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/lib.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/backport.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/display.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/error.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/eval.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/identifier.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/impls.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/semver-1.0.16/src/parse.rs:

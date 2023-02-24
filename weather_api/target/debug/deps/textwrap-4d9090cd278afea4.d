@@ -1,0 +1,11 @@
+/home/davinchat/1.Dev/Weather_app Décathlon/weather_api/target/debug/deps/textwrap-4d9090cd278afea4.rmeta: /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/lib.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/indentation.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/word_separators.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/word_splitters.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/wrap_algorithms.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/line_ending.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/core.rs
+
+/home/davinchat/1.Dev/Weather_app Décathlon/weather_api/target/debug/deps/textwrap-4d9090cd278afea4.d: /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/lib.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/indentation.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/word_separators.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/word_splitters.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/wrap_algorithms.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/line_ending.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/core.rs
+
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/lib.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/indentation.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/word_separators.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/word_splitters.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/wrap_algorithms.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/line_ending.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/textwrap-0.16.0/src/core.rs:

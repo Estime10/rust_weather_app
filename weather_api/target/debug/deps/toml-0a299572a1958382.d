@@ -1,0 +1,13 @@
+/home/davinchat/1.Dev/Weather_app Décathlon/weather_api/target/debug/deps/toml-0a299572a1958382.rmeta: /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/lib.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/map.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/value.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/datetime.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/ser.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/de.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/tokens.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/macros.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/spanned.rs
+
+/home/davinchat/1.Dev/Weather_app Décathlon/weather_api/target/debug/deps/toml-0a299572a1958382.d: /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/lib.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/map.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/value.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/datetime.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/ser.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/de.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/tokens.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/macros.rs /home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/spanned.rs
+
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/lib.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/map.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/value.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/datetime.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/ser.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/de.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/tokens.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/macros.rs:
+/home/davinchat/.cargo/registry/src/github.com-1ecc6299db9ec823/toml-0.5.11/src/spanned.rs:
