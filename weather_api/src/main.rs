@@ -1,16 +1,21 @@
 
+ 
+
 pub(crate) mod ten_cities;
 pub(crate) mod one_city;
 pub(crate) mod forecast;
 pub(crate) mod random_city;
-pub mod libs;
+
 
 
 
 fn main() {
     println!("main");
     ten_cities::get_city();
-    one_city::one_city();
+    match one_city::one_city() {
+        Ok(()) => println!("Data successfully inserted into database!"),
+        Err(err) => println!("Error inserting data into database: {}", err),
+    }
     random_city::random_city();
     forecast::forecast();
   }
