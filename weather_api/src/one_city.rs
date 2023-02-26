@@ -31,22 +31,23 @@ struct WeatherData<'a> {
     timestamp: i64,
 }
 
+
 pub (crate) fn one_city() {
     // api key and country name are constants
-const API_KEY: &str = "69ecca9f44b2498859861bdea6a95b4c";
-const COUNTRY_NAME: &str = "Belgium";
-const CITY_NAMES: [&str; 10] = [
-    "Brussels",
-    "Liege",
-    "Verviers",
-    "Anvers",
-    "Osonede",
-    "Wevelgem",
-    "Sint-Niklaas",
-    "Leuven",
-    "Charleroi",
-    "Aalst",
-];
+    const API_KEY: &str = "69ecca9f44b2498859861bdea6a95b4c";
+    const COUNTRY_NAME: &str = "Belgium";
+    const CITY_NAMES: [&str; 10] = [
+        "Brussels",
+        "Liege",
+        "Verviers",
+        "Anvers",
+        "Osonede",
+        "Wevelgem",
+        "Sint-Niklaas",
+        "Leuven",
+        "Charleroi",
+        "Aalst",
+    ];
     let mut selected_city = None;
     while selected_city.is_none() {
         println!("Please select a city from the following list:");
@@ -74,24 +75,11 @@ const CITY_NAMES: [&str; 10] = [
         selected_city.unwrap(), COUNTRY_NAME, API_KEY
     );
     let response = reqwest::blocking::get(&url)
-        .unwrap()
-        .json::<WeatherResponse>()
-        .unwrap();
-    let celsius = response.temperature.temp;
-    let fahrenheit = celsius * 9.0 / 5.0 + 32.0;
-    println!(
-        "Current weather in {}: {:.1}°C ({:.1}°F), feels like {:.1}°C ({:.1}°F), {}",
-        response.name,
-        celsius,
-        fahrenheit,
-        response.temperature.feels_like,
-        response.weather[0].description,
-        response.weather[0].description
-    );
-    let response = reqwest::blocking::get(&url)
-        .unwrap()
-        .json::<WeatherResponse>()
-        .unwrap();
+    .expect("Failed to send request")
+    .json::<WeatherResponse>()
+    .expect("Failed to deserialize response");
+
+     
         let celsius = response.temperature.temp;
         let fahrenheit = celsius * 9.0 / 5.0 + 32.0;
         println!(
@@ -100,28 +88,24 @@ const CITY_NAMES: [&str; 10] = [
             celsius,
             fahrenheit,
             response.temperature.feels_like,
-            response.temperature.feels_like * 9.0 / 5.0 + 32.0
+            response.weather[0].description,
         );
-        let _response: WeatherResponse = reqwest::blocking::get(&url)
-            .unwrap()
-            .json::<WeatherResponse>()
-            .unwrap();
-        println!("{:#?}", _response);
-
-        let _weather_data = WeatherData {
+    
+        let weather_data = WeatherData {
             city: &response.name,
             temperature: celsius as f64,
             feels_like: response.temperature.feels_like as f64,
             description: &response.weather[0].description,
             timestamp: Utc::now().timestamp(),
         };
-
-        match insert_weather_data(&_weather_data) {
+    
+        match insert_weather_data(&weather_data) {
             Ok(_) => println!("Data inserted"),
             Err(e) => println!("Error inserting data: {}", e),
         }
     }
 
+    
 
 fn insert_weather_data(data: &WeatherData) -> Result<()> {
     let conn = Connection::open("weather.db")?;
@@ -144,4 +128,3 @@ fn insert_weather_data(data: &WeatherData) -> Result<()> {
     )?;
     Ok(())
 }
-
