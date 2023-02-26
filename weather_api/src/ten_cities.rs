@@ -1,12 +1,6 @@
+use chrono::Utc;
+use rusqlite::{params, Connection, Result};
 use serde::{Deserialize, Serialize};
-
-#[derive(Debug, Deserialize, Serialize)]
-struct WeatherResponse {
-    name: String,
-    #[serde(rename = "main")]
-    temperature: Main,
-    weather: Vec<Weather>,
-}
 
 #[derive(Debug, Deserialize, Serialize)]
 struct Main {
@@ -20,64 +14,98 @@ struct Weather {
     description: String,
 }
 
-pub (crate) fn get_city() {
-    // api key and country name are constants
+#[derive(Debug, Deserialize, Serialize)]
+struct WeatherResponse {
+    name: String,
+    #[serde(rename = "main")]
+    temperature: Main,
+    weather: Vec<Weather>,
+}
+
+#[derive(Debug, Deserialize, Serialize)]
+struct WeatherData<'a> {
+    city: &'a str,
+    temperature: f64,
+    feels_like: f64,
+    description: &'a str,
+    timestamp: i64,
+}
+
+pub (crate) fn ten_cities() {
+    
     const API_KEY: &str = "69ecca9f44b2498859861bdea6a95b4c";
-    const COUNTRY_NAME: &str = "Belgium";
-
-    // CITY_NAMES is an array of strings
-    const CITY_NAMES: [&str; 10] = [
-        "Brussels",
-        "Liege",
-        "Verviers",
-        "Anvers",
-        "Ostende",
-        "Wevelgem",
-        "Sint-Niklaas",
-        "Leuven",
-        "Charleroi",
-        "Aalst",
-    ];
-
-    // Print the current weather for each city
+const COUNTRY_NAME: &str = "Belgium";
+const CITY_NAMES: [&str; 10] = [
+    "Brussels",
+    "Liege",
+    "Verviers",
+    "Anvers",
+    "Ostende",
+    "Wevelgem",
+    "Sint-Niklaas",
+    "Leuven",
+    "Charleroi",
+    "Aalst",
+];
     for city_name in &CITY_NAMES {
-        // url is the api url
         let url = format!(
             "http://api.openweathermap.org/data/2.5/weather?q={},{}&units=metric&appid={}",
             city_name, COUNTRY_NAME, API_KEY
         );
-
-        // response is a WeatherResponse struct
         let response = reqwest::blocking::get(&url)
-            .unwrap()
-            // json deserializes the response body into a WeatherResponse struct
-            .json::<WeatherResponse>()
-            // unwrap returns the value of the result or panics if the result is an error
-            .unwrap();
-
-        // Convert the temperature from Kelvin to Celsius
+        .unwrap()
+        .json::<WeatherResponse>()
+        .unwrap();
         let celsius = response.temperature.temp;
-
-        let message = if celsius <= 0.0 {
-            "Go get yourself a pair of gloves at Decathlon"
-        } else if celsius <= 6.0 {
-            "Go get yourself a rain coat at Decathlon"
-        } else {
-            "The weather is fine but don't forget to hydrate yourself with a bottle of water at Decathlon"
-        };
-
-        // Convert the temperature from Celsius to Fahrenheit
         let fahrenheit = celsius * 9.0 / 5.0 + 32.0;
-
-        // print the current weather for each city in celsius and fahrenheit
         println!(
-            "Current weather in {}: {:.1}°C ({:.1}°F), feels like {:.1}°C ({:.1}°F), {}",
+            "Current weather in {}: {:.1}°C ({:.1}°F), feels like {:.1}°C ({:.1}°F)",
             response.name,
             celsius,
             fahrenheit,
             response.temperature.feels_like,
-            response.weather[0].description,
-            message
+            response.temperature.feels_like * 9.0 / 5.0 + 32.0
         );
+        let _response: WeatherResponse = reqwest::blocking::get(&url)
+            .unwrap()
+            .json::<WeatherResponse>()
+            .unwrap();
+        println!("{:#?}", _response);
+
+        let _weather_data = WeatherData {
+            city: &response.name,
+            temperature: celsius as f64,
+            feels_like: response.temperature.feels_like as f64,
+            description: &response.weather[0].description,
+            timestamp: Utc::now().timestamp(),
+        };
+
+        match insert_weather_data(&_weather_data) {
+            Ok(_) => println!("Data inserted"),
+            Err(e) => println!("Error inserting data: {}", e),
+        }
     }
 }
+
+fn insert_weather_data(data: &WeatherData) -> Result<()> {
+    let conn = Connection::open("weather.db")?;
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS ten_cities (
+            id INTEGER PRIMARY KEY,
+            city TEXT NOT NULL,
+            temperature REAL NOT NULL,
+            feels_like REAL NOT NULL,
+            description TEXT NOT NULL,
+            timestamp INTEGER NOT NULL
+        )",
+        params![],
+    )?;
+    conn.execute(
+        "INSERT INTO ten_cities 
+        (city, temperature, feels_like, description, timestamp)
+        VALUES (?1, ?2, ?3, ?4, ?5)",
+        params![data.city, data.temperature, data.feels_like, data.description, data.timestamp],
+    )?;
+    Ok(())
+}
+
