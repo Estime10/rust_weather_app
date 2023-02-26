@@ -1,5 +1,7 @@
-use rusqlite::{Connection, Result};
 use serde::{Deserialize, Serialize};
+use rusqlite::{params, Connection,Result};
+
+
 
 #[derive(Debug, Deserialize, Serialize)]
 struct WeatherResponse {
@@ -18,44 +20,21 @@ struct Main {
 
 #[derive(Debug, Deserialize, Serialize)]
 struct Weather {
-    description: String,
+description: String,
+}
+// struc for the weather data in the database
+#[derive(Debug, Deserialize, Serialize)]
+struct WeatherData<'a>{
+    city: &'a str,
+    temperature: f64,
+    feels_like: f64,
+    description: &'a str,
+
 }
 
-#[derive(Debug)]
-struct OneCityData {
-    
-    city: String,
-    temp: String,
-    feels_like: String,
-    weather_description: String,
-    id: i32,
-}
-
-
-
-impl OneCityData {
-    pub(crate) fn insert(
-        conn: &Connection,
-        city: &str,
-        temp: &str,
-        feels_like: &str,
-        weather_description: &str,
-    ) -> Result<()> {
-        conn.execute(
-            "INSERT INTO one_city (city, temp, feels_like, weather_description)
-            VALUES (?, ?, ?, ?)",
-            &[&city, &temp, &feels_like, &weather_description],
-        )?;
-        Ok(())
-    }
-}
-
-pub (crate) fn one_city() -> Result<()> {
-
-
+pub (crate) fn one_city() {
     // Get the weather data for a city
     const API_KEY: &str = "69ecca9f44b2498859861bdea6a95b4c";
-
     println!("Enter a city name:");
 
     let mut guess = String::new();
@@ -65,55 +44,48 @@ pub (crate) fn one_city() -> Result<()> {
     .expect("Failed to read line");
 
     let city_name = guess.trim();
+
     let url = format!(
+
         "http://api.openweathermap.org/data/2.5/weather?q={}&units=metric&appid={}",
         city_name, API_KEY
     );
-    let response = reqwest::blocking::get(&url)
+    let _response: WeatherResponse = reqwest::blocking::get(&url)
         .unwrap()
         .json::<WeatherResponse>()
         .unwrap();
+    println!("{:#?}", _response);
 
-    // Connect to the database
-    let conn = Connection::open("data.db")?;
-
-    let _celsius = response.temperature.temp;
-    let city_data = OneCityData {
-    city: response.name,
-    temp: (response.temperature.temp as f64).to_string(),
-    feels_like: (response.temperature.feels_like as f64).to_string(),
-    weather_description: response.weather[0].description.clone(),
-    id: response.temperature.temp as i32, // assign a unique ID here
-};
-
-    // Create the "one_city" table if it doesn't exist
-    conn.execute(
-        "CREATE TABLE IF NOT EXISTS one_city (
-                  id              INTEGER PRIMARY KEY,
-                  city            TEXT NOT NULL,
-                  temp            TEXT NOT NULL,
-                  feels_like      TEXT NOT NULL,
-                  weather_description TEXT NOT NULL
-                  )",
-                  rusqlite::params![
-                    &city_data.id,
-                    &city_data.city,
-                    &city_data.temp,
-                    &city_data.feels_like,
-                    &city_data.weather_description,
-                ],
-    )?;
-
-    // Insert the weather data into the database
-    OneCityData::insert(
-        &conn,
-        &city_data.city,
-        &city_data.temp,
-        &city_data.feels_like,
-        &city_data.weather_description,
-    )?;
-
-    Ok(())
-
-
+    let _weather_data = WeatherData {
+        city: &_response.name,
+        temperature:_response.temperature.temp,
+        feels_like:_response.temperature.feels_like,
+        description: &_response.weather[0].description,
+    };
+    match insert_weather_data(&_weather_data) {
+        Ok(_) => println!("Data inserted"),
+        Err(e) => println!("Error inserting data: {}", e),
+    }
+    
 }
+fn insert_weather_data(data:&WeatherData) -> Result<()> {
+    let conn = Connection::open("weather.db")?;
+    conn.execute(
+        "CREATE TABLE IF NOT EXISTS weather_data (
+            id INTEGER PRIMARY KEY,
+            city TEXT NOT NULL,
+            temperature REAL NOT NULL,
+            feels_like REAL NOT NULL,
+            description TEXT NOT NULL
+        )",
+        params![],
+    )?;
+    
+    conn.execute(
+        "INSERT INTO weather_data (city, temperature, feels_like, description)
+        VALUES (?1, ?2, ?3, ?4)",
+        params![data.city, data.temperature, data.feels_like, data.description],
+    )?;
+    Ok(())
+}
+
